@@ -25,7 +25,7 @@ python snatcher.py targethost.com
 git clone https://github.com/imanSHA256/sn4tcher.git 
 cd sn4tcher
 pip install -r requirements.txt
-python sn4tcher.py
+python sn4tcher.py targethost.com
 ```
 
 Created by https://github.com/imanSHA256/
