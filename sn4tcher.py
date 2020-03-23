@@ -32,12 +32,12 @@ url=sys.argv[1]
 description=yellow+""" 
 
 
-                                               
+
  _____ _____ ___ _____ _____ _____ _____ _____ 
 |   __|   | | | |_   _|     |  |  |   __| __  |
 |__   | | | |_  | | | |   --|     |   __|    -|
 |_____|_|___| |_| |_| |_____|__|__|_____|__|__|
-                                               
+
 
 
 """+lblue+"https://github.com/imanSHA256"
@@ -89,9 +89,12 @@ print(str_sprt % lmagneta )
 #Reverse ip loock up
 Domains=re.get("https://api.hackertarget.com/reverseiplookup/?q="+socket_ip)
 print("%s reverse ip loockup result for " % lcyan +socket_ip + " : \n")
-domains_list = str(Domains.text).split()
-for i in domains_list:
-    print('%s ' % default + "www." + i  )
+if "No DNS A records found" in Domains.text:
+   print('%s ' % default + "No DNS A records found \n")
+else:
+   domains_list = str(Domains.text).split()
+   for i in domains_list:
+      print('%s ' % default + "www." + i  )
 
 
 
